@@ -59,7 +59,7 @@ if [ -f $1/data.osrm ] && [ ! -f $1/data.osrm.core ] && [ -f $1/profile.lua ]; t
   source $BIN_DIR/compile_steps/osrm_prepare
 fi
 
-source $BIN_DIR/compile_steps/osrm_clean
+# source $BIN_DIR/compile_steps/osrm_clean
 
 if [ ! -f $BUILD_DIR/Procfile ]; then
   topic "Define Procfile"
