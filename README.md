@@ -43,7 +43,7 @@ The root directory of the app's Git repository must match one of the following c
 
 - include extracted files `data.osrm`, `data.osrm.nodes`, `data.osrm.names`, etc AND a profile called `profile.lua`
 
-*or* 
+*or*
 
 - include prepared files - `data.osrm.core`, `data.osrm.level`, etc AND a profile called `profile.lua`
 

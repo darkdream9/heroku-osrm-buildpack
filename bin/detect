@@ -8,15 +8,15 @@ if [ -f $1/data.pbf ] && [ -f $1/profile.lua ]; then
 # extracted files and profile
 elif [ -f $1/data.osrm ] && [ -f $1/data.osrm.nodes ] && [ ! -f $1/data.osrm.core ] && [ -f $1/profile.lua ]; then
   echo "OSRM/Extracted"
-  exit 0  
+  exit 0
 # prepared files and profile
 elif [ -f $1/data.osrm.core ] && [ -f $1/profile.lua ]; then
   echo "OSRM/Prepared"
-  exit 0  
+  exit 0
 # profile only - we will look to config vars during compile
 elif [ -f $1/profile.lua ]; then
   echo "OSRM/Download"
-  exit 0  
+  exit 0
 else
   exit 1
 fi

@@ -27,7 +27,7 @@ done
 mkdir -p $BUILD_DIR/.apt
 
 # install the debs - not ideal but we need to skip lua5.2 as it confuses cmake (it thinks 5.2 is 5.1)
-for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do  
+for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   if [[ $(basename $DEB) == *lua5.1* ]] || [[ $(basename $DEB) == *libluajit* ]] || [[ $(basename $DEB) == *-doc* ]]; then
     topic "Skipping $(basename $DEB)"
   else
