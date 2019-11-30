@@ -1,4 +1,4 @@
-whitelist_regex="^(OSRM_VERSION|OSRM_DATA_PBF_FILE_URL|OSRM_DATA_BASE_URL)$"
+whitelist_regex="^(OSRM_VERSION|OSRM_DATA_PBF_FILE_URL|OSRM_DATA_BASE_URL|OSRM_PROFILE)$"
 
 topic "Setting up config variables"
 

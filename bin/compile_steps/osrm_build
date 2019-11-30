@@ -14,7 +14,9 @@ make | indent
 topic "Copying OSRM binaries"
 cd $BUILD_DIR/
 cp $BUILD_DIR/build/osrm-* $BUILD_DIR
+cp -r $BUILD_DIR/src/profiles $BUILD_DIR
 
 topic "Caching OSRM binaries"
 mkdir -p $CACHE_DIR/$OSRM_VERSION
 cp -f $BUILD_DIR/build/osrm-* $CACHE_DIR/$OSRM_VERSION
+cp -rf $BUILD_DIR/src/profiles $CACHE_DIR/$OSRM_VERSION

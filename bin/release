@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+BUILD_DIR=$1
+BIN_DIR=$(cd $(dirname $0); pwd)
+
+source $BIN_DIR/compile_steps/osrm_clean
+
+if [ ! -f $BUILD_DIR/Procfile ]; then
+  echo "web: /app/osrm-routed -p \$PORT /app/data.osrm" > $BUILD_DIR/Procfile
+  echo "web: /app/osrm-routed -p \$PORT /app/data.osrm" > /app/Procfile
+  echo "web: /app/osrm-routed -p \$PORT /app/data.osrm" > ./Procfile
+fi
+
 cat <<EOF
 ---
 EOF
