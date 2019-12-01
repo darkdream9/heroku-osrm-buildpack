@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+PORT=$1
+OSRM_DATA_PBF_FILE_URL="http://s3.amazonaws.com/androbin-osrm-data/data.pbf"
+
+curl -# -L -o /app/data.pbf "$OSRM_DATA_PBF_FILE_URL"
+
+/app/osrm-extract -p /app/profiles/profile.lua /app/data.pbf
+/app/osrm-routed -p $PORT /app/data.osrm

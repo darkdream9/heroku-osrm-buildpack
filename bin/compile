@@ -51,19 +51,9 @@ fi
 cp -r $1/src/profiles/ $1/
 cp $1/$OSRM_PROFILE $1/profiles/profile.lua
 
-if [ -f $CACHE_DIR/$OSRM_VERSION/data.pbf ]; then
-  topic "Using cached PBF file"
-  cp $CACHE_DIR/$OSRM_VERSION/data.pbf $BUILD_DIR
-else
-  source $BIN_DIR/compile_steps/download
-fi
-
-source $BIN_DIR/compile_steps/osrm_extract
-source $BIN_DIR/compile_steps/osrm_clean
-
 if [ ! -f $BUILD_DIR/Procfile ]; then
   topic "Define Procfile"
-  echo "web: /app/osrm-routed -p \$PORT /app/data.osrm" > $BUILD_DIR/Procfile
-  echo "web: /app/osrm-routed -p \$PORT /app/data.osrm" > /app/Procfile
-  echo "web: /app/osrm-routed -p \$PORT /app/data.osrm" > ./Procfile
+  echo "web: /app/startup \$PORT" > $BUILD_DIR/Procfile
+  echo "web: /app/startup \$PORT" > /app/Procfile
+  echo "web: /app/startup \$PORT" > ./Procfile
 fi
